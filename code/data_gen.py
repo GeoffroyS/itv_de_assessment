@@ -13,6 +13,7 @@ VideoPlay {
 from datetime import datetime, timedelta
 from random import randint
 import json
+import os
 
 
 def _get_start_end_time():
@@ -45,6 +46,9 @@ def _write_dict_to_json(output_file_name, data_dict):
 	return
 
 def main():
+	path = os.getcwd()
+	output_path = '{}/sim_data/video_play_data.json'.format(path)
+
 	video_play_dictionary = {}
 	for  i in range(1,10000):
 		start_time, end_time = _get_start_end_time()
@@ -53,7 +57,7 @@ def main():
 		video_play_dictionary['VideoPlay{}'.format(i)]['startTime'] = str(start_time)
 		video_play_dictionary['VideoPlay{}'.format(i)]['endTime']   = str(end_time)
 
-	_write_dict_to_json('video_play_data.json',video_play_dictionary)
+	_write_dict_to_json(output_path, video_play_dictionary)
 
 if __name__ == '__main__':
 	main()
