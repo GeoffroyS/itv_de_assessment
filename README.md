@@ -5,9 +5,19 @@ Write Scala, Java or Python code that accepts a finite collection of video play 
 Here is the specification of the format of the source data:
 
 ```
-VideoPlay {
-  startTime : an instant in time
-  endTime : an instant in time
+{
+    "VideoPlay1": {
+        "startTime": "2022-08-06 02:39:29",
+        "endTime": "2022-08-06 02:52:29"
+    },
+    "VideoPlay2": {
+        "startTime": "2022-08-24 11:20:22",
+        "endTime": "2022-08-24 12:10:22"
+    },
+    "VideoPlay3": {
+        "startTime": "2022-08-06 04:15:57",
+        "endTime": "2022-08-06 05:30:57"
+    }
 }
 ```
 
