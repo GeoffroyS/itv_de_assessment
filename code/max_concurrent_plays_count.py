@@ -11,6 +11,7 @@ Then gets the maximum concurrent plays from this data and prints it
 """
 
 import json
+import os
 
 def _get_max_concurrent_plays(json_file_name):
 	"""
@@ -51,7 +52,9 @@ def _get_max_concurrent_plays(json_file_name):
 	return max(count_list)
 
 def main():
-	concurrent_plays = _get_max_concurrent_plays('video_play_data.json')
+	path = os.getcwd()
+	input_path = '{}/sim_data/video_play_data.json'.format(path)
+	concurrent_plays = _get_max_concurrent_plays(input_path)
 	print('Max concurrent plays: {}'.format(concurrent_plays))
 
 if __name__ == '__main__':
